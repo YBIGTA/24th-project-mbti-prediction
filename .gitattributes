@@ -1,0 +1,2 @@
+MBTIQA_dataset.csv filter=lfs diff=lfs merge=lfs -text
+dataset/MBTI_500.csv filter=lfs diff=lfs merge=lfs -text
