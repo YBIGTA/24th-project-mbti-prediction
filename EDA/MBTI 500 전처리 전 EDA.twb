@@ -1,0 +1,1329 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20222.23.1215.0816                               -->
+<workbook original-version='18.1' source-build='2022.2.15 (20222.23.1215.0816)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.AccessibleZoneTabOrder.true...AccessibleZoneTabOrder />
+    <_.fcp.AnimationOnByDefault.true...AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <_.fcp.AnimationOnByDefault.false...style>
+    <_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule element='animation'>
+      <_.fcp.AnimationOnByDefault.false...format attr='animation-on' value='ao-on' />
+    </_.fcp.AnimationOnByDefault.false..._.fcp.MarkAnimation.true...style-rule>
+  </_.fcp.AnimationOnByDefault.false...style>
+  <datasources>
+    <datasource caption='MBTI 500' inline='true' name='federated.1p7krye05bqwyg13efhsm1bd5py2' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='MBTI 500' name='textscan.0roo99k0jeoc5g1cb7mmn1vlhyrp'>
+            <connection class='textscan' directory='C:/Users/JongJin/OneDrive/바탕 화면/와이빅타/신기플/MBTI 500.csv' filename='MBTI 500.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='textscan.0roo99k0jeoc5g1cb7mmn1vlhyrp' name='MBTI 500.csv' table='[MBTI 500#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='string' name='posts' ordinal='0' />
+            <column datatype='string' name='type' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='textscan.0roo99k0jeoc5g1cb7mmn1vlhyrp' name='MBTI 500.csv' table='[MBTI 500#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+            <column datatype='string' name='posts' ordinal='0' />
+            <column datatype='string' name='type' ordinal='1' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[MBTI 500.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>posts</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[posts]</local-name>
+            <parent-name>[MBTI 500.csv]</parent-name>
+            <remote-alias>posts</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[MBTI 500.csv_B32F543B960445B2B98D5D18457A1886]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[type]</local-name>
+            <parent-name>[MBTI 500.csv]</parent-name>
+            <remote-alias>type</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[MBTI 500.csv_B32F543B960445B2B98D5D18457A1886]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <_.fcp.ObjectModelTableType.true...column caption='MBTI 500.csv' datatype='table' name='[__tableau_internal_object_id__].[MBTI 500.csv_B32F543B960445B2B98D5D18457A1886]' role='measure' type='quantitative' />
+      <column caption='Posts' datatype='string' name='[posts]' role='dimension' type='nominal' />
+      <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+      <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:type:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;INFJ&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;ENFJ&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;ESFJ&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;ISFJ&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;INFP&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;ESFP&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;ENFP&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;ESTJ&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;ISFP&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;ISTJ&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;INTJ&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;ESTP&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;ENTJ&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;ISTP&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;INTP&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;ENTP&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;대한민국&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='MBTI 500.csv' id='MBTI 500.csv_B32F543B960445B2B98D5D18457A1886'>
+            <properties context=''>
+              <relation connection='textscan.0roo99k0jeoc5g1cb7mmn1vlhyrp' name='MBTI 500.csv' table='[MBTI 500#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='ko_KR' separator=','>
+                  <column datatype='string' name='posts' ordinal='0' />
+                  <column datatype='string' name='type' ordinal='1' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+    <datasource inline='true' name='Clipboard_20240209T230749' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Clipboard_20240209T230749' name='Clipboard_20240209T230749leaf'>
+            <connection class='textscan' directory='C:/Users/JongJin/OneDrive/문서/내 Tableau 리포지토리/데이터 원본' filename='Clipboard_20240209T230749.txt' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation connection='Clipboard_20240209T230749leaf' name='Clipboard_20240209T230749#txt' table='[Clipboard_20240209T230749#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator='&#9;'>
+            <column datatype='string' name='Type' ordinal='0' />
+            <column datatype='string' name='측정값 이름' ordinal='1' />
+            <column datatype='integer' name='측정값' ordinal='2' />
+            <column datatype='integer' name='MBTI 500.csv의 카운트' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation connection='Clipboard_20240209T230749leaf' name='Clipboard_20240209T230749#txt' table='[Clipboard_20240209T230749#txt]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='ko_KR' separator='&#9;'>
+            <column datatype='string' name='Type' ordinal='0' />
+            <column datatype='string' name='측정값 이름' ordinal='1' />
+            <column datatype='integer' name='측정값' ordinal='2' />
+            <column datatype='integer' name='MBTI 500.csv의 카운트' ordinal='3' />
+          </columns>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Clipboard_20240209T230749#txt]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;ko&quot;</attribute>
+              <attribute datatype='string' name='currency'>&quot;₩&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;\\t&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;ko_KR&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Type]</local-name>
+            <parent-name>[Clipboard_20240209T230749#txt]</parent-name>
+            <remote-alias>Type</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20240209T230749]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>측정값 이름</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[측정값 이름]</local-name>
+            <parent-name>[Clipboard_20240209T230749#txt]</parent-name>
+            <remote-alias>측정값 이름</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LKO_RKR' />
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20240209T230749]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>측정값</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[측정값]</local-name>
+            <parent-name>[Clipboard_20240209T230749#txt]</parent-name>
+            <remote-alias>측정값</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20240209T230749]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>MBTI 500.csv의 카운트</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[MBTI 500.csv의 카운트]</local-name>
+            <parent-name>[Clipboard_20240209T230749#txt]</parent-name>
+            <remote-alias>MBTI 500.csv의 카운트</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <_.fcp.ObjectModelEncapsulateLegacy.true...object-id>[Clipboard_20240209T230749]</_.fcp.ObjectModelEncapsulateLegacy.true...object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='I vs E' datatype='string' name='[Calculation_1592022521482502146]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF FIND([Type], &apos;I&apos;) = 1 THEN &apos;I&apos;&#13;&#10;ELSE &apos;E&apos;&#13;&#10;END' />
+      </column>
+      <column caption='F vs T' datatype='string' name='[I vs E(복사본)(복사본)_1592022521483411460]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF FIND([Type], &apos;F&apos;) = 3 THEN &apos;F&apos;&#13;&#10;ELSE &apos;T&apos;&#13;&#10;END' />
+      </column>
+      <column caption='S vs N' datatype='string' name='[I vs E(복사본)_1592022521483403267]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF FIND([Type], &apos;S&apos;) = 2 THEN &apos;S&apos;&#13;&#10;ELSE &apos;N&apos;&#13;&#10;END' />
+      </column>
+      <column caption='P vs J' datatype='string' name='[S vs N(복사본)_1592022521484992521]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF FIND([Type], &apos;P&apos;) = 4 THEN &apos;P&apos;&#13;&#10;ELSE &apos;J&apos;&#13;&#10;END' />
+      </column>
+      <_.fcp.ObjectModelTableType.true...column caption='Clipboard_20240209T230749' datatype='table' name='[__tableau_internal_object_id__].[Clipboard_20240209T230749]' role='measure' type='quantitative' />
+      <column-instance column='[Calculation_1592022521482502146]' derivation='None' name='[none:Calculation_1592022521482502146:nk]' pivot='key' type='nominal' />
+      <column-instance column='[I vs E(복사본)(복사본)_1592022521483411460]' derivation='None' name='[none:I vs E(복사본)(복사본)_1592022521483411460:nk]' pivot='key' type='nominal' />
+      <column-instance column='[I vs E(복사본)_1592022521483403267]' derivation='None' name='[none:I vs E(복사본)_1592022521483403267:nk]' pivot='key' type='nominal' />
+      <column-instance column='[S vs N(복사본)_1592022521484992521]' derivation='None' name='[none:S vs N(복사본)_1592022521484992521:nk]' pivot='key' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:Calculation_1592022521482502146:nk]' type='palette'>
+            <map to='#7c4d79'>
+              <bucket>&quot;I&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;E&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:I vs E(복사본)_1592022521483403267:nk]' palette='purple_10_0' type='palette'>
+            <map to='#7c4d79'>
+              <bucket>&quot;N&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;S&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:I vs E(복사본)(복사본)_1592022521483411460:nk]' type='palette'>
+            <map to='#7c4d79'>
+              <bucket>&quot;T&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;F&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[none:S vs N(복사본)_1592022521484992521:nk]' type='palette'>
+            <map to='#7c4d79'>
+              <bucket>&quot;P&quot;</bucket>
+            </map>
+            <map to='#eec9e5'>
+              <bucket>&quot;J&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;대한민국&quot;' />
+      </semantic-values>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='Clipboard_20240209T230749' id='Clipboard_20240209T230749'>
+            <properties context=''>
+              <relation connection='Clipboard_20240209T230749leaf' name='Clipboard_20240209T230749#txt' table='[Clipboard_20240209T230749#txt]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='ko_KR' separator='&#9;'>
+                  <column datatype='string' name='Type' ordinal='0' />
+                  <column datatype='string' name='측정값 이름' ordinal='1' />
+                  <column datatype='integer' name='측정값' ordinal='2' />
+                  <column datatype='integer' name='MBTI 500.csv의 카운트' ordinal='3' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='시트 1'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run>&lt;전처리 전 MBTI 분포&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='MBTI 500' name='federated.1p7krye05bqwyg13efhsm1bd5py2' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1p7krye05bqwyg13efhsm1bd5py2'>
+            <_.fcp.ObjectModelTableType.true...column caption='MBTI 500.csv' datatype='table' name='[__tableau_internal_object_id__].[MBTI 500.csv_B32F543B960445B2B98D5D18457A1886]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[MBTI 500.csv_B32F543B960445B2B98D5D18457A1886]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:MBTI 500.csv_B32F543B960445B2B98D5D18457A1886:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[type]' derivation='None' name='[none:type:nk]' pivot='key' type='nominal' />
+            <column caption='Type' datatype='string' name='[type]' role='dimension' type='nominal' />
+            <_.fcp.ObjectModelTableType.false...column caption='MBTI 500.csv' datatype='integer' name='[__tableau_internal_object_id__].[MBTI 500.csv_B32F543B960445B2B98D5D18457A1886]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1p7krye05bqwyg13efhsm1bd5py2].[:Measure Names]'>
+            <groupfilter function='level-members' level='[:Measure Names]' />
+          </filter>
+          <manual-sort column='[federated.1p7krye05bqwyg13efhsm1bd5py2].[none:type:nk]' direction='ASC'>
+            <dictionary>
+              <bucket>&quot;INTP&quot;</bucket>
+              <bucket>&quot;INTJ&quot;</bucket>
+              <bucket>&quot;INFJ&quot;</bucket>
+              <bucket>&quot;INFP&quot;</bucket>
+              <bucket>&quot;ENTP&quot;</bucket>
+              <bucket>&quot;ENFP&quot;</bucket>
+              <bucket>&quot;ISTP&quot;</bucket>
+              <bucket>&quot;ENTJ&quot;</bucket>
+              <bucket>&quot;ESTP&quot;</bucket>
+              <bucket>&quot;ENFJ&quot;</bucket>
+              <bucket>&quot;ISTJ&quot;</bucket>
+              <bucket>&quot;ISFP&quot;</bucket>
+              <bucket>&quot;ISFJ&quot;</bucket>
+              <bucket>&quot;ESTJ&quot;</bucket>
+              <bucket>&quot;ESFP&quot;</bucket>
+              <bucket>&quot;ESFJ&quot;</bucket>
+              <bucket>%all%</bucket>
+            </dictionary>
+          </manual-sort>
+          <slices>
+            <column>[federated.1p7krye05bqwyg13efhsm1bd5py2].[:Measure Names]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='display' class='0' field='[federated.1p7krye05bqwyg13efhsm1bd5py2].[Multiple Values]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1p7krye05bqwyg13efhsm1bd5py2].[__tableau_internal_object_id__].[cnt:MBTI 500.csv_B32F543B960445B2B98D5D18457A1886:qk]' value='*00개' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.1p7krye05bqwyg13efhsm1bd5py2].[__tableau_internal_object_id__].[cnt:MBTI 500.csv_B32F543B960445B2B98D5D18457A1886:qk]' palette='blue_teal_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='dropline'>
+            <format attr='stroke-size' value='0' />
+            <format attr='line-visibility' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1p7krye05bqwyg13efhsm1bd5py2].[__tableau_internal_object_id__].[cnt:MBTI 500.csv_B32F543B960445B2B98D5D18457A1886:qk]' />
+              <text column='[federated.1p7krye05bqwyg13efhsm1bd5py2].[__tableau_internal_object_id__].[cnt:MBTI 500.csv_B32F543B960445B2B98D5D18457A1886:qk]' />
+              <lod column='[federated.1p7krye05bqwyg13efhsm1bd5py2].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1p7krye05bqwyg13efhsm1bd5py2].[Multiple Values]</rows>
+        <cols>[federated.1p7krye05bqwyg13efhsm1bd5py2].[none:type:nk]</cols>
+      </table>
+      <simple-id uuid='{07D23ED3-FA57-497E-8E2D-B9272D21D2CB}' />
+    </worksheet>
+    <worksheet name='시트 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20240209T230749' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20240209T230749'>
+            <column caption='I vs E' datatype='string' name='[Calculation_1592022521482502146]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF FIND([Type], &apos;I&apos;) = 1 THEN &apos;I&apos;&#13;&#10;ELSE &apos;E&apos;&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_1592022521482502146]' derivation='None' name='[none:Calculation_1592022521482502146:nk]' pivot='key' type='nominal' />
+            <column-instance column='[측정값]' derivation='Sum' name='[sum:측정값:qk]' pivot='key' type='quantitative' />
+            <column datatype='integer' name='[측정값]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[Clipboard_20240209T230749].[sum:측정값:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[Clipboard_20240209T230749].[sum:측정값:qk]' field-type='quantitative' max='110000' min='0' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[Clipboard_20240209T230749].[sum:측정값:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[Clipboard_20240209T230749].[sum:측정값:qk]' value='*00개' />
+            <format attr='border-style' scope='rows' value='solid' />
+          </style-rule>
+          <style-rule element='header'>
+            <format attr='height-header' value='21' />
+          </style-rule>
+          <style-rule element='label'>
+            <format attr='text-format' field='[Clipboard_20240209T230749].[sum:측정값:qk]' value='*' />
+          </style-rule>
+          <style-rule element='pane'>
+            <format attr='border-width' value='0' />
+            <format attr='border-style' value='none' />
+          </style-rule>
+          <style-rule element='table-div'>
+            <format attr='line-pattern-only' scope='rows' value='solid' />
+            <format attr='stroke-size' scope='rows' value='0' />
+            <format attr='line-visibility' scope='rows' value='off' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='4' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]' />
+              <text column='[Clipboard_20240209T230749].[sum:측정값:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[Clipboard_20240209T230749].[sum:측정값:qk]</rows>
+        <cols>[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]</cols>
+      </table>
+      <simple-id uuid='{CA01026F-40EC-4994-9E8C-BAD84CEF4289}' />
+    </worksheet>
+    <worksheet name='시트 4 (2)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20240209T230749' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20240209T230749'>
+            <column caption='S vs N' datatype='string' name='[I vs E(복사본)_1592022521483403267]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF FIND([Type], &apos;S&apos;) = 2 THEN &apos;S&apos;&#13;&#10;ELSE &apos;N&apos;&#13;&#10;END' />
+            </column>
+            <column datatype='integer' name='[MBTI 500.csv의 카운트]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[I vs E(복사본)_1592022521483403267]' derivation='None' name='[none:I vs E(복사본)_1592022521483403267:nk]' pivot='key' type='nominal' />
+            <column-instance column='[MBTI 500.csv의 카운트]' derivation='Sum' name='[sum:MBTI 500.csv의 카운트:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[Clipboard_20240209T230749].[none:I vs E(복사본)_1592022521483403267:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' field-type='quantitative' max='110000' min='0' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' value='*00개' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[Clipboard_20240209T230749].[none:I vs E(복사본)_1592022521483403267:nk]' />
+              <text column='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' />
+            </encodings>
+            <dropline drop-when='selected' haslabel='false' x-axis='false' y-axis='true' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]</rows>
+        <cols>[Clipboard_20240209T230749].[none:I vs E(복사본)_1592022521483403267:nk]</cols>
+      </table>
+      <simple-id uuid='{CCEB650E-F580-4C2F-B736-D37B059B7E60}' />
+    </worksheet>
+    <worksheet name='시트 4 (3)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20240209T230749' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20240209T230749'>
+            <column caption='F vs T' datatype='string' name='[I vs E(복사본)(복사본)_1592022521483411460]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF FIND([Type], &apos;F&apos;) = 3 THEN &apos;F&apos;&#13;&#10;ELSE &apos;T&apos;&#13;&#10;END' />
+            </column>
+            <column datatype='integer' name='[MBTI 500.csv의 카운트]' role='measure' type='quantitative' />
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[I vs E(복사본)(복사본)_1592022521483411460]' derivation='None' name='[none:I vs E(복사본)(복사본)_1592022521483411460:nk]' pivot='key' type='nominal' />
+            <column-instance column='[MBTI 500.csv의 카운트]' derivation='Sum' name='[sum:MBTI 500.csv의 카운트:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[Clipboard_20240209T230749].[none:I vs E(복사본)(복사본)_1592022521483411460:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' field-type='quantitative' max='110000' min='0' range-type='fixed' scope='rows' type='space' />
+            <format attr='display' class='0' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' value='*00개' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[Clipboard_20240209T230749].[none:I vs E(복사본)(복사본)_1592022521483411460:nk]' />
+              <text column='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]</rows>
+        <cols>[Clipboard_20240209T230749].[none:I vs E(복사본)(복사본)_1592022521483411460:nk]</cols>
+      </table>
+      <simple-id uuid='{8442FB91-0486-447D-A2B8-8986ACFB884C}' />
+    </worksheet>
+    <worksheet name='시트 4 (4)'>
+      <table>
+        <view>
+          <datasources>
+            <datasource name='Clipboard_20240209T230749' />
+          </datasources>
+          <datasource-dependencies datasource='Clipboard_20240209T230749'>
+            <column datatype='integer' name='[MBTI 500.csv의 카운트]' role='measure' type='quantitative' />
+            <column caption='P vs J' datatype='string' name='[S vs N(복사본)_1592022521484992521]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF FIND([Type], &apos;P&apos;) = 4 THEN &apos;P&apos;&#13;&#10;ELSE &apos;J&apos;&#13;&#10;END' />
+            </column>
+            <column datatype='string' name='[Type]' role='dimension' type='nominal' />
+            <column-instance column='[S vs N(복사본)_1592022521484992521]' derivation='None' name='[none:S vs N(복사본)_1592022521484992521:nk]' pivot='key' type='nominal' />
+            <column-instance column='[MBTI 500.csv의 카운트]' derivation='Sum' name='[sum:MBTI 500.csv의 카운트:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[Clipboard_20240209T230749].[none:S vs N(복사본)_1592022521484992521:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' shelf='columns' />
+          </shelf-sorts>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' field-type='quantitative' max='110000' min='0' range-type='fixed' scope='rows' type='space' />
+            <format attr='title' class='0' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' scope='rows' value='P vs J' />
+            <format attr='display' class='0' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' scope='rows' value='false' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' value='*00개' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[Clipboard_20240209T230749].[none:S vs N(복사본)_1592022521484992521:nk]' />
+              <text column='[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+                <format attr='mark-labels-cull' value='true' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]</rows>
+        <cols>[Clipboard_20240209T230749].[none:S vs N(복사본)_1592022521484992521:nk]</cols>
+      </table>
+      <simple-id uuid='{3706E7C4-2932-43A0-B592-AD39055C3CDC}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard _.fcp.AccessibleZoneTabOrder.true...enable-sort-zone-taborder='true' name='대시보드 1'>
+      <style />
+      <size sizing-mode='automatic' />
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98214' id='7' param='horz' type-v2='layout-flow' w='99050' x='475' y='893'>
+            <zone h='98214' id='5' type-v2='layout-basic' w='99050' x='475' y='893'>
+              <zone h='49107' id='3' name='시트 1' w='99050' x='475' y='893'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='49107' id='13' param='horz' type-v2='layout-flow' w='99050' x='475' y='50000'>
+                <zone h='49107' id='14' name='시트 4' show-title='false' w='24762' x='475' y='50000'>
+                  <layout-cache cell-count-w='2' minheight='206' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='49107' id='15' name='시트 4 (2)' show-title='false' w='24762' x='25237' y='50000'>
+                  <layout-cache cell-count-w='2' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='49107' id='16' name='시트 4 (3)' show-title='false' w='24762' x='49999' y='50000'>
+                  <layout-cache cell-count-w='2' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+                <zone h='49107' id='17' name='시트 4 (4)' show-title='false' w='24762' x='74761' y='50000'>
+                  <layout-cache cell-count-w='2' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                  </zone-style>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='1450' minheight='1450' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='98214' id='18' param='vert' type-v2='layout-flow' w='99050' x='475' y='893'>
+                <zone fixed-size='280' h='49107' id='3' is-fixed='true' name='시트 1' w='99050' x='475' y='893'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49107' id='14' is-fixed='true' name='시트 4' show-title='false' w='24762' x='475' y='50000'>
+                  <layout-cache cell-count-w='2' minheight='206' type-h='scalable' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49107' id='15' is-fixed='true' name='시트 4 (2)' show-title='false' w='24762' x='25237' y='50000'>
+                  <layout-cache cell-count-w='2' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49107' id='16' is-fixed='true' name='시트 4 (3)' show-title='false' w='24762' x='49999' y='50000'>
+                  <layout-cache cell-count-w='2' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='280' h='49107' id='17' is-fixed='true' name='시트 4 (4)' show-title='false' w='24762' x='74761' y='50000'>
+                  <layout-cache cell-count-w='2' type-h='fixed' type-w='cell' />
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{4C2F2BEB-1744-47AE-8974-146C6185FC7D}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='51'>
+    <window class='worksheet' name='시트 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card type='measures' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1p7krye05bqwyg13efhsm1bd5py2].[__tableau_internal_object_id__].[cnt:MBTI 500.csv_B32F543B960445B2B98D5D18457A1886:qk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <zoom type='fit-width' />
+        <highlight>
+          <color-one-way>
+            <field>[federated.1p7krye05bqwyg13efhsm1bd5py2].[:Measure Names]</field>
+            <field>[federated.1p7krye05bqwyg13efhsm1bd5py2].[none:type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{A2A0FD14-E8C9-4D30-AEDB-B4C6A750D7B6}' />
+    </window>
+    <window class='worksheet' name='시트 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='4' param='[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[Clipboard_20240209T230749].[sum:측정값:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20240209T230749].[cnt:측정값:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:I vs E(복사본)_1592022521483403267:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:MBTI 500.csv의 카운트:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:Type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{FB50439F-FF62-4276-9698-CFB27AE98D92}' />
+    </window>
+    <window class='worksheet' name='시트 4 (2)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[Clipboard_20240209T230749].[none:I vs E(복사본)_1592022521483403267:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20240209T230749].[cnt:측정값:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:I vs E(복사본)_1592022521483403267:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:MBTI 500.csv의 카운트:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:Type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{00130D11-9A61-4CDE-B2FE-7D87ED4D7D73}' />
+    </window>
+    <window class='worksheet' name='시트 4 (3)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[Clipboard_20240209T230749].[none:I vs E(복사본)(복사본)_1592022521483411460:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20240209T230749].[cnt:측정값:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:I vs E(복사본)(복사본)_1592022521483411460:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:MBTI 500.csv의 카운트:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:S vs N(복사본)_1592022521484992521:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:Type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B13DC770-2DB9-450C-B504-91A534AC081D}' />
+    </window>
+    <window class='worksheet' name='시트 4 (4)'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='2' param='[Clipboard_20240209T230749].[none:S vs N(복사본)_1592022521484992521:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <selection-collection>
+          <node-selection select-tuples='false'>
+            <oriented-node-reference orientation='vertical'>
+              <node-reference>
+                <axis>[Clipboard_20240209T230749].[sum:MBTI 500.csv의 카운트:qk]</axis>
+              </node-reference>
+              <page-reference />
+            </oriented-node-reference>
+          </node-selection>
+        </selection-collection>
+        <highlight>
+          <color-one-way>
+            <field>[Clipboard_20240209T230749].[cnt:측정값:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:Calculation_1592022521482502146:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:MBTI 500.csv의 카운트:qk]</field>
+            <field>[Clipboard_20240209T230749].[none:S vs N(복사본)_1592022521484992521:nk]</field>
+            <field>[Clipboard_20240209T230749].[none:Type:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{F49C842B-4933-46D3-A258-F5F5E9C5726F}' />
+    </window>
+    <window class='dashboard' maximized='true' name='대시보드 1'>
+      <viewpoints>
+        <viewpoint name='시트 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='시트 4'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='시트 4 (2)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='시트 4 (3)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='시트 4 (4)'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='4' />
+      <simple-id uuid='{881054BB-EF2E-4BC7-9F12-8A561DB98760}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='대시보드 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='시트 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='시트 4' width='124'>
+      iVBORw0KGgoAAAANSUhEUgAAAHwAAADACAYAAADGFgewAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAADoElEQVR4nO3dMWhcBRzH8V/kECXeokMHh5ZCU0hEtD6LCaUksUl6hCgYt4AZhUrEOjgV
+      roEWOrUVKdQxQ0ahS4YeDaXXkkFS6KJocAk4WKgQcpBASYiDodQaMEjujuT7/cAN9+C9+8OX
+      9z8ODl7H1tbWVoTxUrsHUGsZHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4zIEOXq8WKar1
+      vbvg8kwmiiLFP14TmVneu49otlK7B9h/RnN1cTqn2z3G/3Sg73D9Gy/4Rj3V3rHc+PnZgdSr
+      vZmYWU6ymoHeIkXRm4FPp3PnzzbO2SS8lV7qy4fDT3L9/lK+6O5KNhYyX+vJR7cOJ0vf5+q9
+      xbz78tOs/vZTft/xAnP5uph77v3+WvG84Cmlb/TjXLxyN0ufd+XownxqPUM5dyjJa0cy/dWF
+      nO2v5FT/+3nrjZ3O31+BX8Rb6UlKJwYzvHI7d5c2sjBfyzuVMzmUJJ0juVA5lvUfb2Zq/JNc
+      e7jR7lH3HDJ4SiczVFlJ/cFs5mt9GTu7fSv/Wk93ZTLnr3ybL0/8kUe/PG7vnE0AXOl/e290
+      PKuffZfa4OV807l98JX1jHxQZD2v5vW3J3Jp7M0dznzxO/x4pn6YzeThFgy9Bzr8mzILc6WD
+      GRzG4DAGhzE4zH/+LFtbW8vm5mYrZlEL7Op3eLlcbvYcahFXOozBYQwOY3AYg8MYHMbgMAaH
+      MTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbg
+      MAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MY
+      HMbgMAaHMTiMwWEMDmNwGIPDGBzG4DC7en54o9Fo9hxqER8YD+NKhzE4jMFhDA5jcBiDwxgc
+      xuAwBocxOIzBYQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiD
+      wxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5j
+      cBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMLt6YHyj0Wj2HGqRXQUvl8vNnkMt4kqHMTiM
+      wWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaH
+      MTiMwWEMDmNwGIPD/AUqTXxdGgNDxQAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='시트 4 (2)' width='124'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='시트 4 (3)' width='124'>
+      iVBORw0KGgoAAAANSUhEUgAAAHwAAADACAYAAADGFgewAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAADtElEQVR4nO3dP2iUBxyH8a8lHaQciB2yJdWhgbqEegZqiQY0iVZqKgGXgAFBDAUJbYNk
+      MgiC4CBioMRJHLQdzOBQhYNA0FDaoljcxD8kg4RCpxzJoA3pIKLUfwfJ3dF7ns927wvv/eCB
+      33svN7zrVlZWViKMD+o9gGrL4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYZrqPUB13MxY
+      8fv88uqhtmOZvDyY1lVeee7SQPrH779+Yt/Z3D65Y5VXr751jfn36M2MFS9k8+TlDK62cF2/
+      Y+250mGwwecuDaT4w/UsvjyQgS/G8s/jyYx805lisZhiZ08OX3zD+v4fa9B7eJLcz3h/MeMv
+      Pv7nHtva1ZO2ienMLH6V3o+SuelS5vuGMzXxbZ4NlvLbgY3J0nz+fPi0LtNXSwMHb8uxd91f
+      W/dk/5aJTM0sprf370yX5tMz/Hk23W3JH+eHMzq7Ozs7d2RX+6aaTl1t2JWeNKere0tuTc1k
+      cW46pfm96e5oyqdHf8618aF0rH+QG6cOpfe7a/mr3qOuIXDwpHn33rTf+jVXp0pZ6N+XrUnu
+      XP89Cy3bcnDoVM6NHciG2/fyqN6DrqEGXukV+HhPvt5+Oid+bMmRK589P/bkp4z2Hc9s+Vk+
+      LHySL0fOpKO+U66pBn0O19ugVzqRwWEMDmNwmPf+Sl9aWsry8nItZlENVPRYVigUqj2HasSV
+      DmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaHMTiM
+      wWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaH
+      MTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOExF7w8vl8vVnkM14gvj
+      YVzpMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AY
+      g8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwO
+      Y3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcpqIXxpfL5WrP
+      oRqpKHihUKj2HKoRVzqMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzB
+      YQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DD/AsgLi7OO49V2AAAAAElFTkSuQmCC
+    </thumbnail>
+    <thumbnail height='192' name='시트 4 (4)' width='124'>
+      iVBORw0KGgoAAAANSUhEUgAAAHwAAADACAYAAADGFgewAAAACXBIWXMAAA7DAAAOwwHHb6hk
+      AAAECklEQVR4nO3dS2gcBRzH8V8lQhEWBA85iJuKENv0IpiKTWlpRWtLsFUKXoIGFPFxqWgo
+      PbUIkUIOtVgsHhRZER9QhR7aYCAS2lCiXfFxsHiwuIdSUZJDloRCN8RDKkasGsHZNfv9fmAv
+      w8zsn/3uPBYWZs3i4uJihHFTqwdQcxkcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaHMThMmwav
+      pTLQm97e66/NO/LEodO51Cjgrc4eTu9AJbUCdl2ENg2+pP9oNdVqNVPjJ7KjNpznj3/T6pFa
+      rq2D/6bjlg15cvCBTFe/XjVHYlEQwf9KrTKQ3pfPZO73BTnbSBqXPs7Qo1uXLgdbd+apd75v
+      5Zj/KUTwxvzFvFv5LOVtm9O1bHnX9p25+/xEJq8Xr02Mpa/jasbfPJJrg6cyVa1m6tNKXrh3
+      bSvGLkRbBz/90tJN2/0P78/k+lfzxtPdf1yha1f2bDyX8cm5JLVMjF1JR9bmzrvK+eL1/Tn4
+      WiWj311NT0/XDfe/GnW0eoAi9R+t5pVtf7dGZ7Y/tDHHxiczt/6njF3ZncEk3c9+mFNbLmRi
+      cjSjw29l5I6hnDy+N5032MP0Lz8nHd2r5oNs6yN8JTof3J17zp3PyfGxzO7rTzKdL898ntny
+      pjz+3HCOHX4st1a/zQ/LN5qdyUwjacx8lfc+uZBy36bc3qL5/63V8sUszm278kjfkRw6Uc4z
+      7/ckmUsuf5CDew/kx/q13Fxaly1DI7lv+TYX386+Fz9KPaVs2DPy50vF/9ga/6bMgj+l0xgc
+      xuAwBof5x7v0+fn5LCwsNGMWNcGKfpaVSqWi51CTeEqHMTiMwWEMDmNwGIPDGBzG4DAGhzE4
+      jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAG
+      hzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG
+      4DAGhzE4jMFhDA5jcBiDwxgcZkXPD6/X60XPoSbxgfEwntJhDA5jcBiDwxgcxuAwBocxOIzB
+      YQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocx
+      OIzBYQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNwGIPDGBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAw
+      BocxOIzBYQwOY3AYg8MYHMbgMAaHMTjMih4YX6/Xi55DTbKi4KVSqeg51CSe0mEMDmNwGIPD
+      GBzG4DAGhzE4jMFhDA5jcBiDwxgcxuAwBocxOIzBYQwOY3AYg8MYHMbgMAaHMTiMwWEMDmNw
+      GIPDGBzG4DAGh/kV956nnHbOkEcAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
