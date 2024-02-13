@@ -44,17 +44,6 @@ def create_data_loaders(input_ids, attention_masks, labels, batch_size, random_s
     
     return train_dataloader, validation_dataloader, test_dataloader
 
-def preprocess_text(text):
-    text = re.sub(r'[^\w\s]', '', text)
-    
-    words = text.split()
-
-    lemmatizer = WordNetLemmatizer()
-    stop_words = set(stopwords.words('english'))
-    cleaned_text = [lemmatizer.lemmatize(word.lower()) for word in words if word.lower() not in stop_words]
-
-    return ' '.join(cleaned_text)
-
 
 if __name__ == '__main__':
     args = parse_args()
