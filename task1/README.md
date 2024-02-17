@@ -3,13 +3,12 @@
 task1  
 ├── code  
 │   ├── 0212_make_small_dataset.py   - 데이터 셋 줄여서 학습할 때 필요  
-│   ├── main.py                      - **두번째 실행**
-│   ├── real_main.py                 - firebase에서 할당받은 json 파일 필요, firebase real-time db에 질문/답변 저장 가능
+│   ├── main.py                      - 전체 과정(학습, 평가, 예측), 두번째 실행
 │   ├── encode.py                    - encode하는 부분  
 │   ├── preprocessing.py             - 전처리 및 unsampling  
 │   ├── train.py                     - train & evaluate  
-│   └── utility.py                   - 승준님 코드 참고, **첫번째 실행**
-│  
+│   ├── utility.py                   - 승준님 코드 참고, 첫번째 실행
+│   └── real_main.py                 - **최종적으로 실행할 부분** firebase에서 할당받은 json 파일 필요, firebase real-time db에 질문/답변 저장 가능
 │  
 └── dataset                          - this folder contains any dataset of our project.  
     ├── reduced_data.csv             - MBTI_500 small version  
