@@ -11,7 +11,7 @@ class MBTIClassifier extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue.shade100,
-        title: const Text("나의 MBTI를 예측해보자!"),
+        title: const Text("당신의 MBTI를 맞춰볼게요..."),
       ),
       body: const ChatScreen(),
     );

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'firebase_service.dart';
 import 'mbti_classification.dart';
+import 'mbti_dialog.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +27,7 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -66,7 +67,7 @@ class FirstPage extends StatelessWidget {
                           Size(MediaQuery.of(context).size.width * 0.94, 90),
                     ),
                     child: const Text(
-                      'MBTI를 예측해보자!',
+                      '당신의 MBTI를 맞춰볼게요!',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
@@ -94,7 +95,7 @@ class FirstPage extends StatelessWidget {
                           Size(MediaQuery.of(context).size.width * 0.94, 90),
                     ),
                     child: const Text(
-                      '특정 MBTI와 대화해보자!',
+                      '특정 MBTI와 대화해보세요!',
                       style: TextStyle(
                         fontSize: 20,
                         color: Colors.black,
@@ -104,10 +105,18 @@ class FirstPage extends StatelessWidget {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const MBTIClassifier(),
+                          builder: (context) => const MBTIDialog(),
                         ),
                       );
                     },
+                  ),
+                  const SizedBox(height: 50),
+                  const Text(
+                    '24기 김채현, 김예진, 김무현, 김종진, 이승준',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.white,
+                    ),
                   ),
                 ],
               ),
