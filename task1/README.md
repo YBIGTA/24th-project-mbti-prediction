@@ -3,7 +3,8 @@
 task1  
 ├── code  
 │   ├── 0212_make_small_dataset.py   - 데이터 셋 줄여서 학습할 때 필요  
-│   ├── main.py                      - **두번째 실행**  
+│   ├── main.py                      - **두번째 실행**
+│   ├── real_main.py                 - firebase에서 할당받은 json 파일 필요, firebase real-time db에 질문/답변 저장 가능
 │   ├── encode.py                    - encode하는 부분  
 │   ├── preprocessing.py             - 전처리 및 unsampling  
 │   ├── train.py                     - train & evaluate  
