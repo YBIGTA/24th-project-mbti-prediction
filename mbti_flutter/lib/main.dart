@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'firebase_service.dart';
 import 'mbti_classification.dart';
-// import 'package:cloud_firestore/cloud_firestore.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await FirebaseService.initializeFirebase();
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
@@ -18,7 +20,7 @@ class MyApp extends StatelessWidget {
 }
 
 class FirstPage extends StatelessWidget {
-  const FirstPage({Key? key}) : super(key: key);
+  const FirstPage({super.key});
 
   @override
   Widget build(BuildContext context) {

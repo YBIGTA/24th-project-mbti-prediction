@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'dart:math';
 
 class MBTIClassifier extends StatelessWidget {
-  const MBTIClassifier({Key? key}) : super(key: key);
+  const MBTIClassifier({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,112 +28,279 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _textController = TextEditingController();
   List<Widget> messages = [];
+  List<String> answerList = [];
+  int conversationCount = 0;
+  final DatabaseReference _databaseReference = FirebaseDatabase.instance.ref();
+
+  Future<void> _loadRandomCommonQ() async {
+    DatabaseEvent databaseEvent =
+        await _databaseReference.child('commonQ').once();
+
+    List<dynamic> commonQuestions =
+        (databaseEvent.snapshot.value as List<dynamic>);
+
+    Random random = Random();
+    int randomIndex = random.nextInt(commonQuestions.length);
+    String commonQuestion = commonQuestions[randomIndex];
+
+    setState(() {
+      messages.add(BubbleYou(answer: commonQuestion));
+    });
+  }
+
+  Future<void> _loadRandomEIQ() async {
+    DatabaseEvent databaseEvent =
+        await _databaseReference.child('EandIQ').once();
+
+    List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
+
+    Random random = Random();
+    int randomIndex = random.nextInt(questions.length);
+    String question = questions[randomIndex];
+
+    setState(() {
+      messages.add(BubbleYou(answer: question));
+    });
+  }
+
+  Future<void> _loadRandomSNQ() async {
+    DatabaseEvent databaseEvent =
+        await _databaseReference.child('SandNQ').once();
+
+    List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
+
+    Random random = Random();
+    int randomIndex = random.nextInt(questions.length);
+    String question = questions[randomIndex];
+
+    setState(() {
+      messages.add(BubbleYou(answer: question));
+    });
+  }
+
+  Future<void> _loadRandomTFQ() async {
+    DatabaseEvent databaseEvent =
+        await _databaseReference.child('TandFQ').once();
+
+    List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
+
+    Random random = Random();
+    int randomIndex = random.nextInt(questions.length);
+    String question = questions[randomIndex];
+
+    setState(() {
+      messages.add(BubbleYou(answer: question));
+    });
+  }
+
+  Future<void> _loadRandomJPQ() async {
+    DatabaseEvent databaseEvent =
+        await _databaseReference.child('JandPQ').once();
+
+    List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
+
+    Random random = Random();
+    int randomIndex = random.nextInt(questions.length);
+    String question = questions[randomIndex];
+
+    setState(() {
+      messages.add(BubbleYou(answer: question));
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: messages.length + 1,
-      itemBuilder: (context, index) {
-        if (index == messages.length) {
-          return Align(
-            alignment: Alignment.centerRight,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
+    if (messages.isEmpty) {
+      _loadRandomCommonQ();
+    }
+
+    return Column(
+      children: [
+        Expanded(
+          child: ListView.builder(
+            reverse: false,
+            itemCount: messages.length,
+            itemBuilder: (context, index) {
+              return messages[index];
+            },
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(8),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  controller: _textController,
+                  decoration: const InputDecoration(
+                    hintText: 'Type your message...',
+                  ),
+                ),
               ),
-              child: BubbleMe(
-                text: '????',
-                textController: _textController,
-                onSendMessage: (message) {
+              TextButton(
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue.shade100,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  minimumSize: const Size(80, 50),
+                  maximumSize: const Size(80, 50),
+                ),
+                onPressed: () {
+                  String userMessage = _textController.text;
+                  answerList.add(userMessage);
+                  // _textController.clear();
                   setState(() {
                     messages.add(
                       BubbleMe(
-                        text: message,
-                        textController: _textController,
-                        onSendMessage: (message) {},
+                        answer: userMessage,
                       ),
                     );
-                    messages.add(const BubbleYou());
-                    _textController.clear;
+
+                    conversationCount++;
+
+                    if (conversationCount == 1) {
+                      _loadRandomEIQ();
+                    } else if (conversationCount == 2) {
+                      _loadRandomSNQ();
+                    } else if (conversationCount == 3) {
+                      _loadRandomTFQ();
+                    } else if (conversationCount == 4) {
+                      _loadRandomJPQ();
+                    } else {
+                      debugPrint(answerList.toString());
+                      messages.add(
+                        Align(
+                          alignment: Alignment.center,
+                          child: Column(
+                            children: [
+                              const SizedBox(height: 80),
+                              Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.red.withOpacity(0.1),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                    vertical: 80,
+                                  ),
+                                  child: const Column(
+                                    children: [
+                                      Text(
+                                        '당신의 MBTI는..',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      Text(
+                                        'ENFP인 것 같습니다.',
+                                        style: TextStyle(fontSize: 30),
+                                      ),
+                                    ],
+                                  )),
+                            ],
+                          ),
+                        ),
+                      );
+                    }
+
+                    _textController.clear();
                   });
                 },
+                child: const Text(
+                  'Send',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
               ),
-            ),
-          );
-        } else {
-          return messages[index];
-        }
-      },
+            ],
+          ),
+        ),
+      ],
     );
   }
 }
 
 class BubbleMe extends StatelessWidget {
-  final TextEditingController textController;
-  final Function(String) onSendMessage;
-  final String text;
+  final String? answer;
 
   const BubbleMe({
-    Key? key,
-    required this.textController,
-    required this.onSendMessage,
-    required this.text,
-  }) : super(key: key);
+    super.key,
+    this.answer,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.blue,
-      ),
-      padding: const EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 20,
-      ),
-      width: 250,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          TextField(
-            controller: textController,
-            decoration: const InputDecoration(
-              hintText: 'Type your mesage...',
-              border: InputBorder.none,
+    return Align(
+      alignment: Alignment.centerRight,
+      child: Container(
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.blue,
+        ),
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 20,
+        ),
+        margin: const EdgeInsets.only(
+          right: 10,
+          bottom: 10,
+          top: 10,
+        ),
+        width: MediaQuery.of(context).size.width * 0.7,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            Text(
+              answer ?? "",
+              style: const TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+              textAlign: TextAlign.left,
             ),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              onSendMessage(textController.text);
-              textController.clear(); // 입력 후 텍스트 필드를 지움
-            },
-            child: const Text('전송'),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
 }
 
 class BubbleYou extends StatelessWidget {
-  const BubbleYou({super.key});
+  final String? answer;
+
+  const BubbleYou({
+    super.key,
+    required this.answer,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: Colors.black.withOpacity(0.2)),
-      padding: const EdgeInsets.symmetric(
-        vertical: 10,
-        horizontal: 20,
-      ),
-      width: 250,
-      child: const Text(
-        "새로운 정보를 받았을 때, 이를 어떻게 처리하는지 설명해 주실 수 있나요?",
-        style: TextStyle(fontSize: 20),
+    return Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(10),
+            color: Colors.black.withOpacity(0.2)),
+        padding: const EdgeInsets.symmetric(
+          vertical: 10,
+          horizontal: 20,
+        ),
+        margin: const EdgeInsets.only(
+          left: 10,
+          bottom: 10,
+          top: 10,
+        ),
+        width: MediaQuery.of(context).size.width * 0.7,
+        child: Text(
+          answer.toString(),
+          style: const TextStyle(fontSize: 20),
+        ),
       ),
     );
   }
