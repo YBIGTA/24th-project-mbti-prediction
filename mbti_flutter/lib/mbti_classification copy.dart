@@ -137,7 +137,7 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  Future<String?> _loadMBTI() async {
+  Future<String> _loadMBTI() async {
     DatabaseEvent databaseEvent = await _databaseReference
         .child('task1')
         .child('UserAnswer')
@@ -145,15 +145,11 @@ class _ChatScreenState extends State<ChatScreen> {
         .child('mbti')
         .once();
 
-    if (databaseEvent.snapshot.value != null) {
-      List<dynamic> finalMBTI = (databaseEvent.snapshot.value as List<dynamic>);
-      if (finalMBTI.isNotEmpty) {
-        String mbti = finalMBTI[0];
-        return mbti;
-      }
-    }
+    List<dynamic> finalMBTI = (databaseEvent.snapshot.value as List<dynamic>);
 
-    return null; // Return null if there's no valid MBTI data
+    String mbti = finalMBTI[0];
+
+    return mbti;
   }
 
   @override
@@ -228,56 +224,12 @@ class _ChatScreenState extends State<ChatScreen> {
                         Align(
                           alignment: Alignment.center,
                           child: Padding(
-                            padding: const EdgeInsets.all(30),
+                            padding: const EdgeInsets.all(8.0),
                             child: TextButton(
                               style: TextButton.styleFrom(
                                 backgroundColor: Colors.blue.shade300,
-                                fixedSize: const Size(100, 50),
                               ),
-                              onPressed: () async {
-                                String? mbti = await _loadMBTI();
-                                if (mbti != null) {
-                                  messages.add(
-                                    Align(
-                                      alignment: Alignment.center,
-                                      child: Column(
-                                        children: [
-                                          const SizedBox(height: 50),
-                                          Container(
-                                              decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                color:
-                                                    Colors.red.withOpacity(0.1),
-                                              ),
-                                              padding:
-                                                  const EdgeInsets.symmetric(
-                                                horizontal: 20,
-                                                vertical: 80,
-                                              ),
-                                              child: Column(
-                                                children: [
-                                                  const Text(
-                                                    '당신의 MBTI는..',
-                                                    style:
-                                                        TextStyle(fontSize: 20),
-                                                  ),
-                                                  Text(
-                                                    '$mbti인 것 같습니다.',
-                                                    style: const TextStyle(
-                                                        fontSize: 30),
-                                                  ),
-                                                ],
-                                              )),
-                                        ],
-                                      ),
-                                    ),
-                                  );
-                                  setState(() {});
-                                } else {
-                                  debugPrint('MBTI data is null');
-                                }
-                              },
+                              onPressed: () {},
                               child: const Text(
                                 '분석하기',
                                 style: TextStyle(
@@ -285,6 +237,38 @@ class _ChatScreenState extends State<ChatScreen> {
                                 ),
                               ),
                             ),
+                          ),
+                        ),
+                      );
+
+                      messages.add(
+                        Align(
+                          alignment: Alignment.center,
+                          child: Column(
+                            children: [
+                              const SizedBox(height: 80),
+                              Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.red.withOpacity(0.1),
+                                  ),
+                                  padding: const EdgeInsets.symmetric(
+                                    horizontal: 20,
+                                    vertical: 80,
+                                  ),
+                                  child: Column(
+                                    children: [
+                                      const Text(
+                                        '당신의 MBTI는..',
+                                        style: TextStyle(fontSize: 20),
+                                      ),
+                                      Text(
+                                        '$_loadMBTI인 것 같습니다.',
+                                        style: const TextStyle(fontSize: 30),
+                                      ),
+                                    ],
+                                  )),
+                            ],
                           ),
                         ),
                       );

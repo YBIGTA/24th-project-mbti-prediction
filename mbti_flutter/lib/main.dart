@@ -36,7 +36,7 @@ class FirstPage extends StatelessWidget {
             child: Center(
               child: Column(
                 children: [
-                  const SizedBox(height: 180),
+                  const SizedBox(height: 150),
                   const Text(
                     'YBIGTA 신입기수 프로젝트',
                     style: TextStyle(
@@ -52,6 +52,7 @@ class FirstPage extends StatelessWidget {
                     '😎😎',
                     style: TextStyle(
                       fontSize: 40,
+                      color: Colors.amber,
                     ),
                   ),
                   const SizedBox(height: 50),
@@ -115,7 +116,7 @@ class FirstPage extends StatelessWidget {
                     '24기 김채현, 김예진, 김무현, 김종진, 이승준',
                     style: TextStyle(
                       fontSize: 16,
-                      color: Colors.white,
+                      color: Colors.black,
                     ),
                   ),
                 ],
