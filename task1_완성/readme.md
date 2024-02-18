@@ -1,6 +1,6 @@
 ## 구조
 ```
-task1  
+task1_완성  
 ├── code
 │   ├── ???.json                     - firebase에서 할당받은 개인 json 파일 필요 (참고: https://tre2man.tistory.com/196)
 │   ├── save_bert.py                 - **첫번째 실행** 시간 단축용, 필요한 모델 미리 저장하기 
