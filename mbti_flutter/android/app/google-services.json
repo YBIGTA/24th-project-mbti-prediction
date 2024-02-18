@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "1083913322405",
+    "firebase_url": "https://ybigta-newbiepj-mbti-default-rtdb.firebaseio.com",
+    "project_id": "ybigta-newbiepj-mbti",
+    "storage_bucket": "ybigta-newbiepj-mbti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1083913322405:android:ced2e0c17c53976a34324c",
+        "android_client_info": {
+          "package_name": "com.example.mbti_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBOH3KLNDak7ipydIICjyH5Q-fnxoqlSBc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

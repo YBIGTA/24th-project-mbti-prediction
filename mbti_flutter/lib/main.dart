@@ -27,7 +27,7 @@ class FirstPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
@@ -45,7 +45,7 @@ class FirstPage extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    'TBDTBDTBD',
+                    'David Kim',
                     style: TextStyle(fontSize: 40),
                   ),
                   const Text(

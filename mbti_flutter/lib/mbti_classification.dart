@@ -1,6 +1,8 @@
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:math';
+import 'package:intl/intl.dart';
 
 class MBTIClassifier extends StatelessWidget {
   const MBTIClassifier({super.key});
@@ -11,7 +13,7 @@ class MBTIClassifier extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.blue.shade100,
-        title: const Text("당신의 MBTI를 맞춰볼게요..."),
+        title: const Text("나의 MBTI를 예측해보자!"),
       ),
       body: const ChatScreen(),
     );
@@ -31,10 +33,25 @@ class _ChatScreenState extends State<ChatScreen> {
   List<String> answerList = [];
   int conversationCount = 0;
   final DatabaseReference _databaseReference = FirebaseDatabase.instance.ref();
+  String formattedDate = DateFormat('yyyyMMddHHmmss').format(DateTime.now());
+
+  void uploadData() async {
+    DatabaseReference reference = FirebaseDatabase.instance.ref();
+    await reference
+        .child('task1')
+        // .child(ServerValue.timestamp.toString())
+        .child('UserAnswer')
+        .child(formattedDate)
+        .set(answerList);
+    debugPrint('Data uploaded successfully');
+  }
 
   Future<void> _loadRandomCommonQ() async {
-    DatabaseEvent databaseEvent =
-        await _databaseReference.child('commonQ').once();
+    DatabaseEvent databaseEvent = await _databaseReference
+        .child('task1')
+        .child('QuestionList')
+        .child('commonQ')
+        .once();
 
     List<dynamic> commonQuestions =
         (databaseEvent.snapshot.value as List<dynamic>);
@@ -49,8 +66,11 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> _loadRandomEIQ() async {
-    DatabaseEvent databaseEvent =
-        await _databaseReference.child('EandIQ').once();
+    DatabaseEvent databaseEvent = await _databaseReference
+        .child('task1')
+        .child('QuestionList')
+        .child('EandIQ')
+        .once();
 
     List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
 
@@ -64,8 +84,11 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> _loadRandomSNQ() async {
-    DatabaseEvent databaseEvent =
-        await _databaseReference.child('SandNQ').once();
+    DatabaseEvent databaseEvent = await _databaseReference
+        .child('task1')
+        .child('QuestionList')
+        .child('SandNQ')
+        .once();
 
     List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
 
@@ -79,8 +102,11 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> _loadRandomTFQ() async {
-    DatabaseEvent databaseEvent =
-        await _databaseReference.child('TandFQ').once();
+    DatabaseEvent databaseEvent = await _databaseReference
+        .child('task1')
+        .child('QuestionList')
+        .child('TandFQ')
+        .once();
 
     List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
 
@@ -94,8 +120,11 @@ class _ChatScreenState extends State<ChatScreen> {
   }
 
   Future<void> _loadRandomJPQ() async {
-    DatabaseEvent databaseEvent =
-        await _databaseReference.child('JandPQ').once();
+    DatabaseEvent databaseEvent = await _databaseReference
+        .child('task1')
+        .child('QuestionList')
+        .child('JandPQ')
+        .once();
 
     List<dynamic> questions = (databaseEvent.snapshot.value as List<dynamic>);
 
@@ -174,6 +203,8 @@ class _ChatScreenState extends State<ChatScreen> {
                       _loadRandomJPQ();
                     } else {
                       debugPrint(answerList.toString());
+                      uploadData();
+                      // 여기서 업로드.
                       messages.add(
                         Align(
                           alignment: Alignment.center,
