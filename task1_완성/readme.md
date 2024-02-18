@@ -7,6 +7,6 @@ task1_완성
 │   └── real_main.py                 - **두번째 실행** firebase real-time db에 저장된 답변을 바탕으로 예측된 mbti 결과 db에 다시 저장
 │  
 └── model                          
-    └── best_model.pth               - pretrained model, 용량이 커서 안올립니다.
+    └── best_model.pth               - 학습된 weight를 모델에 적용, 용량이 커서 안올립니다.
 ```
 
