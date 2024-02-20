@@ -39,7 +39,6 @@ class _ChatScreenState extends State<ChatScreen> {
     DatabaseReference reference = FirebaseDatabase.instance.ref();
     await reference
         .child('task1')
-        // .child(ServerValue.timestamp.toString())
         .child('UserAnswer')
         .child(formattedDate)
         .set(answerList);
