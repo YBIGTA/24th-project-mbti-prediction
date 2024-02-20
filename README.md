@@ -66,4 +66,6 @@ input =  "일상생활, 학교생활, 성격, 가치관, 취미, 시사, 스포�
   
 - https://huggingface.co/ToBeWithYou/MBTI_ESFP
 - https://huggingface.co/ToBeWithYou/MBTI_INTJ
+
 ## Frontend & Backend
+![image](https://github.com/chaehyun1/study/assets/108905986/6d95630e-7d5a-4d8a-8737-76cf3f359545)
