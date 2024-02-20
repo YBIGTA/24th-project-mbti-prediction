@@ -22,5 +22,9 @@
 ## Dataset
 
 ## Modeling
-
+- https://huggingface.co/ToBeWithYou/MBTI_ENFP
+- https://huggingface.co/ToBeWithYou/MBTI_ENTP
+- https://huggingface.co/ToBeWithYou/MBTI_ISFJ
+- https://huggingface.co/ToBeWithYou/MBTI_ESFP
+- https://huggingface.co/ToBeWithYou/MBTI_INTJ
 ## Frontend & Backend
