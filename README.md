@@ -13,11 +13,13 @@
 
 ## Dataset
 - https://www.kaggle.com/datasets/zeyadkhalid/mbti-personality-types-500-dataset/data
+
 ![image](https://github.com/chaehyun1/study/assets/108905986/c04df444-da62-416f-91ab-8703d32c819a)
 ![image](https://github.com/chaehyun1/study/assets/108905986/2786bf3c-9be2-4c38-941e-efa15e01728e)
 
 ## Modeling
 ![image](https://github.com/chaehyun1/study/assets/108905986/72e4bd77-145a-4d3c-8b05-8755ed71afae)
+- bert 기반의 pretrained model을 fine-tuning하여 사용  
 
 ## Frontend & Backend
 ```
