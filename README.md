@@ -70,3 +70,4 @@ input =  "일상생활, 학교생활, 성격, 가치관, 취미, 시사, 스포�
 
 ## Frontend & Backend
 ![image](https://github.com/chaehyun1/study/assets/108905986/6d95630e-7d5a-4d8a-8737-76cf3f359545)
+![image](https://github.com/YBIGTA/24th-project-mbti-prediction/assets/108905986/84e33812-b03c-4d58-8a7a-de52c414c229)
