@@ -31,7 +31,8 @@ task1_완성
 └── model                          
     └── best_model.pth      - 학습된 weight를 모델에 적용, 용량이 커서 안올립니다.
 ```
-- cd code로 code 파일 안에서 실행해야 함! 
+- cd code로 code 파일 안에서 실행해야 함!
+
 ![image](https://github.com/chaehyun1/study/assets/108905986/fa958668-8ec6-4b2f-8857-368f3343197a)
 ![image](https://github.com/chaehyun1/study/assets/108905986/55064238-4e41-4860-96a9-da17ffe62a54)
 
