@@ -29,8 +29,27 @@ class _ChatScreenState extends State<ChatScreen> {
   final TextEditingController _textController = TextEditingController();
   List<Widget> messages = [];
   List<String> answerList = [];
-  // final DatabaseReference _databaseReference = FirebaseDatabase.instance.ref();
-  String formattedDate = DateFormat('yyyyMMddHHmmss').format(DateTime.now());
+  final DatabaseReference _databaseReference = FirebaseDatabase.instance.ref();
+  bool isGetAnswerButtonVisible = true;
+  // String formattedDate = DateFormat('yyyyMMddHHmmss').format(DateTime.now());
+
+  Future<String?> _loadAnswer(String id) async {
+    DatabaseEvent databaseEvent = await _databaseReference
+        .child('task2')
+        .child('Answer')
+        .child(id)
+        .child('mbti')
+        .once();
+
+    if (databaseEvent.snapshot.value != null) {
+      String answer = (databaseEvent.snapshot.value as String);
+      if (answer.isNotEmpty) {
+        String answerModified = answer.substring(0, answer.length - 4);
+        return answerModified;
+      }
+    }
+    return "$id null null 해요";
+  }
 
   @override
   void initState() {
@@ -59,60 +78,90 @@ class _ChatScreenState extends State<ChatScreen> {
             child: Row(
               children: [
                 Expanded(
-                    child: TextField(
-                  controller: _textController,
-                  decoration: const InputDecoration(
-                    hintText: 'Type your message...',
-                  ),
-                )),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.red.shade50,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    fixedSize: const Size(80, 50),
-                  ),
-                  onPressed: () {
-                    String userMessage = _textController.text;
-                    answerList.add(userMessage);
-                    setState(
-                      () {
-                        messages.add(
-                          BubbleMe(
-                            answer: userMessage,
-                          ),
-                        );
-
-                        if (userMessage == "quit" || userMessage == "나가기") {
-                          Navigator.pop(context);
-                        } else {
-                          uploadData(userMessage);
-                          messages.add(
-                            Align(
-                              alignment: Alignment.center,
-                              child: Padding(
-                                padding: const EdgeInsets.all(30),
-                                child: TextButton(
-                                  child: const Text('Get Answer',
-                                      style: TextStyle(color: Colors.black)),
-                                  onPressed: () {},
-                                ),
-                              ),
-                            ),
-                          );
-                        }
-                        _textController.clear();
-                      },
-                    );
-                  },
-                  child: const Text(
-                    'send',
-                    style: TextStyle(
-                      color: Colors.black,
-                    ),
+                  child: TextField(
+                    controller: _textController,
+                    decoration: InputDecoration(
+                        hintText: 'Type your message...',
+                        filled: true,
+                        fillColor: Colors.red[50],
+                        border: InputBorder.none),
+                    maxLines: null,
                   ),
                 ),
+                isGetAnswerButtonVisible
+                    ? TextButton(
+                        style: TextButton.styleFrom(
+                          backgroundColor: Colors.red.shade50,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(1),
+                          ),
+                          fixedSize: const Size(80, 48),
+                        ),
+                        onPressed: () {
+                          debugPrint('send');
+                          String userMessage = _textController.text;
+                          answerList.add(userMessage);
+                          setState(
+                            () {
+                              messages.add(
+                                BubbleMe(
+                                  answer: userMessage,
+                                ),
+                              );
+                              if (userMessage == "quit" ||
+                                  userMessage == "나가기") {
+                                Navigator.pop(context);
+                              } else {
+                                String id = uploadData(userMessage).toString();
+                                messages.add(
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(30),
+                                      child: TextButton(
+                                        child: const Text('Get Answer',
+                                            style:
+                                                TextStyle(color: Colors.black)),
+                                        onPressed: () async {
+                                          debugPrint('get answer');
+                                          String? intjAnswer =
+                                              await _loadAnswer(id);
+
+                                          if (intjAnswer != null) {
+                                            messages.add(
+                                              BubbleYou(
+                                                answer: intjAnswer,
+                                              ),
+                                            );
+                                          } else {
+                                            messages.add(
+                                              const BubbleYou(
+                                                answer: 'Error',
+                                              ),
+                                            );
+                                          }
+                                          setState(() {
+                                            // 이상하면 이거 편집
+                                            isGetAnswerButtonVisible = true;
+                                          });
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                );
+                              }
+                              _textController.clear();
+                            },
+                          );
+                        },
+                        child: const Text(
+                          'send',
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                        ),
+                      )
+                    : Container(),
               ],
             )),
       ],
@@ -127,12 +176,19 @@ class _ChatScreenState extends State<ChatScreen> {
     });
   }
 
-  void uploadData(String userMessage) async {
+  Future<String> uploadData(String userMessage) async {
     DatabaseReference reference = FirebaseDatabase.instance.ref();
-    await reference.child('task2').child(formattedDate).set(userMessage);
+    String formattedDate = DateFormat('yyyyMMddHHmmss').format(DateTime.now());
+    await reference
+        .child('task2')
+        .child("questions")
+        .child(formattedDate)
+        .set(userMessage);
+
+    return formattedDate;
   }
 
-  Future<void> _getMessage() async {}
+  // Future<void> _getMessage() async {}
 }
 
 class BubbleMe extends StatelessWidget {
@@ -151,7 +207,7 @@ class BubbleMe extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          color: Colors.blue,
+          color: Colors.redAccent.shade100,
         ),
         padding: const EdgeInsets.symmetric(
           vertical: 10,
@@ -162,7 +218,10 @@ class BubbleMe extends StatelessWidget {
           bottom: 10,
           top: 10,
         ),
-        width: MediaQuery.of(context).size.width * 0.7,
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width * 0.7,
+        ),
+        // width: MediaQuery.of(context).size.width * 0.7,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
@@ -206,7 +265,9 @@ class BubbleYou extends StatelessWidget {
           bottom: 10,
           top: 10,
         ),
-        width: MediaQuery.of(context).size.width * 0.7,
+        constraints: BoxConstraints(
+          maxWidth: MediaQuery.of(context).size.width * 0.7,
+        ),
         child: Text(
           answer.toString(),
           style: const TextStyle(fontSize: 20),

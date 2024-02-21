@@ -35,6 +35,8 @@ class _ChatScreenState extends State<ChatScreen> {
   final DatabaseReference _databaseReference = FirebaseDatabase.instance.ref();
   String formattedDate = DateFormat('yyyyMMddHHmmss').format(DateTime.now());
 
+  final ScrollController _scrollController = ScrollController();
+
   void uploadData() async {
     DatabaseReference reference = FirebaseDatabase.instance.ref();
     await reference
@@ -170,6 +172,7 @@ class _ChatScreenState extends State<ChatScreen> {
       children: [
         Expanded(
           child: ListView.builder(
+            controller: _scrollController,
             reverse: false,
             itemCount: messages.length,
             itemBuilder: (context, index) {
@@ -184,19 +187,22 @@ class _ChatScreenState extends State<ChatScreen> {
               Expanded(
                 child: TextField(
                   controller: _textController,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     hintText: 'Type your message...',
+                    filled: true,
+                    fillColor: Colors.blue.shade50,
+                    border: InputBorder.none,
                   ),
+                  maxLines: null,
                 ),
               ),
               TextButton(
                 style: TextButton.styleFrom(
-                  backgroundColor: Colors.blue.shade100,
+                  backgroundColor: Colors.blue.shade50,
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+                    borderRadius: BorderRadius.circular(1),
                   ),
-                  minimumSize: const Size(80, 50),
-                  maximumSize: const Size(80, 50),
+                  fixedSize: const Size(80, 48),
                 ),
                 onPressed: () {
                   String userMessage = _textController.text;
@@ -290,6 +296,11 @@ class _ChatScreenState extends State<ChatScreen> {
                     }
 
                     _textController.clear();
+                    _scrollController.animateTo(
+                      _scrollController.position.maxScrollExtent,
+                      duration: const Duration(milliseconds: 300),
+                      curve: Curves.easeOut,
+                    );
                   });
                 },
                 child: const Text(
